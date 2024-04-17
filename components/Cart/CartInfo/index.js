@@ -3,12 +3,15 @@ import Link from 'next/link'
 import NavBar from 'components/NavBar'
 import ShoppingCartSection from './ShoppingCartSection'
 import Footer from 'components/Utils/Footer'
+import { cartDetail, cartDetailList } from 'components/mocks/cartDetail'
 
 const Cart = ({ cartSlice }) => {
   const steps = ['Shopping Cart', 'Checkout Detail', 'Order Complete']
   const stepIdx = 0
-  const cartList = Object.values(cartSlice.cart)
-  const totalCost = cartSlice.totalPrice
+  // const cartList = Object.values(cartSlice.cart)
+  const cartList = cartDetailList
+  // const totalCost = cartSlice.totalPrice
+  const totalCost = 8.26
   return (
     <div className="cart-wrapper">
       <NavBar />

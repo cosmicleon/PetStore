@@ -2,13 +2,21 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from './styles'
 import { useRouter } from 'next/router'
+import { cartDetailList } from 'components/mocks/cartDetail'
+import { productDetail, productDetail2 } from 'components/mocks/productDetail'
 
 const firstCapitalize = (string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1)
+  // return string.charAt(0).toUpperCase() + string.slice(1)
+  return string
 }
 
 const Products = ({ productListData }) => {
-  const { data, total, page, last_page, queryParams: query } = productListData
+  // const { data, total, page, last_page, queryParams: query } = productListData
+  const data = [productDetail, productDetail2]
+  const total = 1
+  const page = 1
+  const last_page = 2
+  // queryParams: query
 
   const router = useRouter()
 

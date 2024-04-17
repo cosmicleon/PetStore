@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import Product from 'components/Product'
 import { PRODUCT_TYPE } from 'utils/constant'
 import axios from 'axios'
+import { productDetail } from 'components/mocks/productDetail'
 
 const ProductSinglePage = ({ productData }) => {
   const router = useRouter()
@@ -24,7 +25,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { id } = params
 
-  const productData = await axios.get(`${process.env.BACKEND_URL}/product/${id}`).then((res) => res.data.productDetail)
+  // const productData = await axios.get(`${process.env.BACKEND_URL}/product/${id}`).then((res) => res.data.productDetail)
+  const productData = productDetail
 
   if (!productData) {
     return {

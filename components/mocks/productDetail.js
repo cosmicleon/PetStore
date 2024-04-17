@@ -116,3 +116,91 @@ export const productDetail = {
     },
   ],
 }
+
+export const productDetail2 = {
+  id: 'fgjO8RWbfZFPdfYMhFhB',
+  name: 'IRIS HRB375 Beef Flavored Dog Pate',
+  productSku: '4967576462709',
+  shortDescription:
+    '<p>IRIS HRB375 Beef Dog Pate for all dog breeds. Store the product in a cool and dry place. Shelf life 24 months from date of manufacture.</p>',
+  images: [
+    {
+      id: 'kahHgGaP3nN29VLajc62',
+      url: '/products/related-product-4.jpg',
+    },
+    {
+      id: '6wiW4CgCtckpMOevlRms',
+      url: '/products/related-product-4-2.jpg',
+    },
+  ],
+  price: 3.43,
+  categories: [
+    {
+      id: 'aASCxshW40mARWjMvCA2',
+      name: 'Pate for dogs',
+    },
+  ],
+}
+
+export const productDetail3 = {
+  id: 'mBmDX6T1aMsKxtjMGJ8G',
+  name: 'JERHIGH Chicken Vegetable Gravy Chicken and Vegetable Pate for dogs',
+  productSku: '0604-1',
+  shortDescription:
+    '<p>JERHIGH Chicken Vegetable Gravy contains full nutritional value. Using 100% pure raw materials that are strictly tested. Ingredients include: chicken, modified flour, water, carrots, sweet potatoes. Carrageenan coagulant, sugar, liver flavor. Refined Wheat Flour, Wheat Gluten, Food Fiber, Inulin. Salt and Gum coagulant. It will be wonderful for your dog to enjoy the deliciousness of this special sauce. Products meet international quality standards.</p>',
+  images: [
+    {
+      id: 'Ehp1SSezdSNrEx93rCfC',
+      url: '/products/related-product-1.jpg',
+    },
+  ],
+  price: 1.41,
+  categories: [
+    {
+      id: 'aASCxshW40mARWjMvCA2',
+      name: 'Pate for dogs',
+    },
+  ],
+}
+
+export const productDetail4 = {
+  id: 'QCXi2Jgp62SNVqbeBXK2',
+  name: 'IRIS One Care Gizzard Chicken Pate for Dogs',
+  productSku: '4905009667109',
+  shortDescription:
+    '<p>IRIS One Care Gizzard Chicken Pate for dogs includes ingredients such as chicken, vegetables, rice, chicken gizzards, chicken liver, corn starch.</p>',
+  images: [
+    {
+      id: 'Wx4weCHSssLID68H9uoc',
+      url: '/products/related-product-2.jpg',
+    },
+  ],
+  price: 1.61,
+  categories: [
+    {
+      id: 'aASCxshW40mARWjMvCA2',
+      name: 'Pate for dogs',
+    },
+  ],
+}
+
+export const productDetail5 = {
+  id: 'TLyP98kwIcd0crLRAiiD',
+  name: 'Pate sauce for dogs with chicken and beef fillet flavor INABA Chicken Fillet & Beef',
+  productSku: '6935296401016',
+  shortDescription:
+    '<p>INABA Chicken Fillet & Beef Dog Pate Sauce is produced by modern Japanese technology with delicious taste and main ingredients are chicken breast, chicken liver, vegetables or additional beef. Add the best nutrition for your dog.</p>',
+  images: [
+    {
+      id: 'MeQvRv23baXXjgrhgKVu',
+      url: '/products/related-product-3.jpg',
+    },
+  ],
+  price: 2.01,
+  categories: [
+    {
+      id: 'aASCxshW40mARWjMvCA2',
+      name: 'Pate for dogs',
+    },
+  ],
+}

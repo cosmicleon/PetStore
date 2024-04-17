@@ -1,10 +1,12 @@
 import Cart from 'components/Cart/CartInfo'
+import { cartDetail } from 'components/mocks/cartDetail'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 
 const CheckoutPage = () => {
   const router = useRouter()
-  const cartSlice = useSelector((state) => state.checkout)
+  // const cartSlice = useSelector((state) => state.checkout)
+  const cartSlice = cartDetail
   if (router.isFallback) {
     return <h1>Loading ...</h1>
   }

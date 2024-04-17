@@ -4,7 +4,8 @@ import Link from 'next/link'
 
 const FeaturedCard = ({ trendingProducts }) => {
   const firstCapitalize = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1)
+    // return string.charAt(0).toUpperCase() + string.slice(1)
+    return string
   }
 
   return (

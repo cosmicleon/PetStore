@@ -25,7 +25,7 @@ const OrderCompleteSection = ({ cartInfo, billInfo, shipInfo, totalCost, SOnum, 
       } else {
         return (
           <div className="payment">
-            <p className="payment-title">Thank you for complete your payment!</p>
+            <p className="payment-title">Thank you for completing your payment!</p>
             <style jsx>{styles}</style>
           </div>
         )

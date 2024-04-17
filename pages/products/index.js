@@ -5,11 +5,13 @@ import { PRODUCT_TYPE } from 'utils/constant'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCategoriesData, setProductData, setQueryParams } from 'store/reducers/productSlice'
+import { productDetail } from 'components/mocks/productDetail'
 
 const ProductListPage = ({ productList, queryParams }) => {
   const router = useRouter()
   const dispatch = useDispatch()
-  const productSlice = useSelector((state) => state.product)
+  // const productSlice = useSelector((state) => state.product)
+  const productSlice = productDetail
 
   useEffect(() => {
     const updateProductSlice = () => {
