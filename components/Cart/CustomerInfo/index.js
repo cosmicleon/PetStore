@@ -3,11 +3,13 @@ import Link from 'next/link'
 import NavBar from 'components/NavBar'
 import CheckoutDetailsSection from './CheckoutDetailsSection'
 import Footer from 'components/Utils/Footer'
+import { cartDetailList } from 'components/mocks/cartDetail'
 
 const Cart = ({ cartSlice }) => {
   const steps = ['Shopping Cart', 'Checkout Detail', 'Order Complete']
   const stepIdx = 1
-  const cartList = Object.values(cartSlice.cart)
+  // const cartList = Object.values(cartSlice.cart)
+  const cartList = cartDetailList
   const customerBillingDetail = cartSlice.bill
   const totalCost = cartSlice.totalPrice
 

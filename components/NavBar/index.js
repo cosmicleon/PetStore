@@ -110,7 +110,8 @@ const NavBar = () => {
               </div>
             </div>
           </div>
-          {UserSlice.id === '' ? (
+          {/* {UserSlice.id === '' ? ( */}
+          {'!' === '' ? (
             <Link href="/sign-in">
               <a className="user-href">
                 <div className="user">
@@ -122,7 +123,8 @@ const NavBar = () => {
           ) : (
             <div className="user">
               <img className="user-icon" src="/images/Navbar/user.svg" alt="user" />
-              <p>{UserSlice.firstName + ' ' + UserSlice.lastName}</p>
+              {/* <p>{UserSlice.firstName + ' ' + UserSlice.lastName}</p> */}
+              <p>{'Linh' + ' ' + 'Tran'}</p>
               <div className="tooltip-arrow"></div>
               <div className="user-menu">
                 <Link href="/order-management">

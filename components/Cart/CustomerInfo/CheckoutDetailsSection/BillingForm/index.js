@@ -20,6 +20,8 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
   const [listDistrict, setListDistrict] = useState([])
   const [listWard, setListWard] = useState([])
 
+  totalCost = 8.26
+
   useEffect(() => {
     if (completeOrder) localStorage.setItem('completeOrder', JSON.stringify(completeOrder))
     return () => {
@@ -169,12 +171,16 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
           try {
             const from_district_id = 1455
             const from_ward_id = '21410'
-            const region = listRegion.filter((region) => region.ProvinceID === values.regionId)[0].ProvinceName
-            const district = listDistrict.filter((district) => district.DistrictID === values.districtId)[0]
-              .DistrictName
-            const ward = listWard.filter((ward) => ward.WardCode === values.wardId)[0].WardName
+            const region = ["Thành phố Hồ Chí Minh", "Thành phố Hà Nội", "Thành phố Hải Phòng"]
+            // const region = listRegion.filter((region) => region.ProvinceID === values.regionId)[0].ProvinceName
+            // const district = listDistrict.filter((district) => district.DistrictID === values.districtId)[0]
+            //   .DistrictName
+            const district = ["Phường 1", "Phường 2", "Phường 3", "Phường 4", "Phường 5", "Phường 6", "Phường 7", "Phường 8", "Phường 9", "Phường 10", "Phường 11", "Phường 12"]
+            // const ward = listWard.filter((ward) => ward.WardCode === values.wardId)[0].WardName
+            const ward = ["Tân Bình", "Tân Phú", "Phú Nhuận", "Bình Tân"]
             // ** Get GHN delivery info
-            const shipInfo = await getShipInfo(from_district_id, from_ward_id, values.districtId, values.wardId)
+            // const shipInfo = await getShipInfo(from_district_id, from_ward_id, values.districtId, values.wardId)
+            const shipInfo = await getShipInfo(from_district_id, from_ward_id, "Q10B", "P10C")
 
             // ** Create order through API
             const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/order`
@@ -238,7 +244,8 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
                               autoComplete={'given-name'}
                               onChange={handleChange}
                               onBlur={handleBlur}
-                              value={values.firstName}
+                              // value={values.firstName}
+                              value={"Minh Tan"}
                               placeholder={'Enter first name'}
                             />
                           </span>
@@ -258,7 +265,8 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
                               autoComplete={'family-name'}
                               onChange={handleChange}
                               onBlur={handleBlur}
-                              value={values.lastName}
+                              // value={values.lastName}
+                              value={"Vu"}
                               placeholder={'Enter last name'}
                             />
                           </span>
@@ -284,7 +292,8 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
                               autoComplete={'tel'}
                               onChange={handleChange}
                               onBlur={handleBlur}
-                              value={values.phone}
+                              // value={values.phone}
+                              value={"0987654321"}
                               placeholder={'Enter phone number'}
                             />
                           </span>
@@ -305,7 +314,8 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
                               autoComplete={'email'}
                               onChange={handleChange}
                               onBlur={handleBlur}
-                              value={values.email}
+                              // value={values.email}
+                              value={"nguoidung@gmail.com"}
                               placeholder={'Enter email'}
                             />
                           </span>
@@ -323,7 +333,8 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
                               autoComplete={'organization'}
                               onChange={handleChange}
                               onBlur={handleBlur}
-                              value={values.company}
+                              // value={values.company}
+                              value={"Công ti TNHH BKPetStore"}
                               placeholder={'Enter company'}
                             />
                           </span>
@@ -342,7 +353,8 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
                               data-placeholder="Choose Province/City…"
                               aria-hidden="true"
                               tabIndex="-1"
-                              value={values.regionId}
+                              // value={values.regionId}
+                              value={"84"}
                               onChange={(e) => {
                                 const regionId = Number(e.target.value)
                                 setFieldValue('regionId', regionId)
@@ -374,7 +386,8 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
                               data-placeholder="Choose District…"
                               aria-hidden="true"
                               tabIndex="-1"
-                              value={values.districtId}
+                              // value={values.districtId}
+                              value={"D1"}
                               onChange={(e) => {
                                 const districtId = Number(e.target.value)
                                 setFieldValue('districtId', districtId)
@@ -406,7 +419,8 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
                               data-placeholder="Choose District…"
                               aria-hidden="true"
                               tabIndex="-1"
-                              value={values.wardId}
+                              // value={values.wardId}
+                              value={"P3"}
                               onChange={handleChange}
                               onBlur={handleBlur}
                             >
@@ -435,7 +449,8 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
                               placeholder={'Enter address'}
                               onChange={handleChange}
                               onBlur={handleBlur}
-                              value={values.address}
+                              // value={values.address}
+                              value={"132 Đường Lý Thường Kiệt"}
                               autoComplete={'address-level4'}
                             />
                           </span>
@@ -459,7 +474,8 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
                               Enter order note"
                               rows="2"
                               cols="5"
-                              value={values.orderComment}
+                              // value={values.orderComment}
+                              value={"Đựng trong thùng lớn nhé!"}
                               onChange={handleChange}
                               onBlur={handleBlur}
                             />
@@ -498,7 +514,7 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
                                 </td>
                                 <td className="product-total">
                                   <span className="woocommerce-Price-amount amount">
-                                    <bdi>{cart.price * cart.quantity}</bdi>
+                                    <bdi>{(cart.price * cart.quantity).toFixed(2)}</bdi>
                                     <span className="woocommerce-Price-currencySymbol">$</span>
                                   </span>
                                 </td>
@@ -562,11 +578,13 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
                               className="input-radio"
                               name="paymentMethod"
                               value="paypal"
-                              checked={values.paymentMethod === 'paypal'}
+                              // checked={values.paymentMethod === 'paypal'}
+                              checked={'paypal' === 'paypal'}
                               onChange={() => setFieldValue('paymentMethod', 'paypal', false)}
                             />
                             <label htmlFor="payment_method_bacs">PayPal</label>
-                            {values.paymentMethod === 'paypal' ? (
+                            {/* {values.paymentMethod === 'paypal' ? ( */}
+                            {'paypal' === 'paypal' ? (
                               <div className="payment_box payment_method_bacs">
                                 <p>Make payments via PayPal. Orders will be shipped after payment has been made.</p>
                               </div>
@@ -579,11 +597,13 @@ const BillingForm = ({ cartList, totalCost, customerBillingDetail }) => {
                               className="input-radio"
                               name="paymentMethod"
                               value="cod"
-                              checked={values.paymentMethod === 'cod'}
+                              // checked={values.paymentMethod === 'cod'}
+                              checked={'paypal' === 'cod'}
                               onChange={() => setFieldValue('paymentMethod', 'cod', false)}
                             />
                             <label htmlFor="payment_method_cod">Cash on delivery</label>
-                            {values.paymentMethod === 'cod' ? (
+                            {/* {values.paymentMethod === 'cod' ? ( */}
+                            { 'paypal' === 'cod' ? (
                               <div className="payment_box payment_method_cod">
                                 <p>Pay the deliverer or shipper using cash or card.</p>
                               </div>

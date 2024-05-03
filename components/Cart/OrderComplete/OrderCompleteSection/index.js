@@ -6,14 +6,17 @@ import PaymentSection from '../PaymentSection'
 
 const OrderCompleteSection = ({ cartInfo, billInfo, shipInfo, totalCost, SOnum, orderId }) => {
   const [isPaid, setIsPaid] = useState(false)
-  const orderingDate = new Date()
-  const shippingDate = new Date(shipInfo.shippingTime)
+  // const orderingDate = new Date()
+  // const shippingDate = new Date(shipInfo.shippingTime)
   const paymentMethodObj = {
     paypal: 'Paypal',
     cod: 'Cash on Delivery',
   }
+  orderId = "34X40A2"
+  totalCost = 9.28
   const renderPayment = (isPaid) => {
-    if (billInfo.paymentMethod === 'paypal') {
+    // if (billInfo.paymentMethod === 'paypal') {
+      if ('paypal' === 'paypal') {
       if (!isPaid) {
         return (
           <div className="payment">
@@ -58,7 +61,8 @@ const OrderCompleteSection = ({ cartInfo, billInfo, shipInfo, totalCost, SOnum, 
           })}
           <div className="row-cell">
             <p className="sub-total">Subtotal</p>
-            <p className="sub-price">{(totalCost - shipInfo.shippingFee).toFixed(2)}$</p>
+            {/* <p className="sub-price">{(totalCost - shipInfo.shippingFee).toFixed(2)}$</p> */}
+            <p className="sub-price">{(totalCost - 1.02).toFixed(2)}$</p>
           </div>
           <div className="row-cell">
             <p className="shipping">Shipping by</p>
@@ -68,7 +72,8 @@ const OrderCompleteSection = ({ cartInfo, billInfo, shipInfo, totalCost, SOnum, 
           </div>
           <div className="row-cell">
             <p className="shipping-cost">Shipping cost</p>
-            <p className="price">{shipInfo.shippingFee}$</p>
+            {/* <p className="price">{shipInfo.shippingFee}$</p> */}
+            <p className="price">{1.02}$</p>
           </div>
           <div className="row-cell">
             <p className="total">Total</p>
@@ -82,7 +87,7 @@ const OrderCompleteSection = ({ cartInfo, billInfo, shipInfo, totalCost, SOnum, 
               <li>
                 Code orders: <span className="id">{SOnum}</span>
               </li>
-              <li>
+              {/* <li>
                 Order date:{' '}
                 <span className="date">
                   {orderingDate.getUTCDate()}/{orderingDate.getUTCMonth() + 1}/{orderingDate.getUTCFullYear()}
@@ -93,12 +98,13 @@ const OrderCompleteSection = ({ cartInfo, billInfo, shipInfo, totalCost, SOnum, 
                 <span className="date">
                   {shippingDate.getUTCDate()}/{shippingDate.getUTCMonth() + 1}/{shippingDate.getUTCFullYear()}
                 </span>
-              </li>
+              </li> */}
               <li>
                 Total: <span className="price">{totalCost}$</span>
               </li>
               <li>
-                Payment method: <span className="payment-method">{paymentMethodObj[billInfo.paymentMethod]}</span>
+                {/* Payment method: <span className="payment-method">{paymentMethodObj[billInfo.paymentMethod]}</span> */}
+                Payment method: <span className="payment-method">{paymentMethodObj["paypal"]}</span>
               </li>
             </ul>
             {renderPayment(isPaid)}
